@@ -1,0 +1,52 @@
+doctype html
+link(rel='stylesheet' href='css/student1.css')
+
+head
+    title Being a Mermaid
+body
+    h1 A complete degree on how to be a mermaid!
+    hr
+    section
+        h2 Location 
+        p The location of the University of Thingamabobs is under the sea right next to King Triton's castle.
+    section
+        h2 About 
+        section
+            h3 What is Required 
+            p You must bring your own mermaid tail and Dinglehopper. The mermaid tail is essentail for learning to swim efficiently. The Dinglehopper is important to decrease drag and to allow you to swim faster.
+            img(src="https://cdn.dribbble.com/users/1618313/screenshots/4008864/media/77f8dac04df74a9493284bc5d4142150.jpeg?compress=1&resize=400x300&vertical=center" alt="Dinglehopper" width="300")
+        section 
+            h3 About the Professors
+            p There are eight total professors. Ariel and her seven sisters have been mermaids since the day they were born. They came from a long line of mermaids throughout their family and are amazing teachers. 
+            img(src="https://freepngimg.com/save/58981-ariel-mermaid-sebastian-princess-disney-png-download-free/703x878" alt="Ariel (The Professor)" height="200")
+        section 
+            h3 Classes Offered
+            p Some of the classes offered include Tail Flapping 101, Dolphinean 105, Siren Singing 112, and Mermaid Ethics 187. These classes are the prerequisites for all advances mermaid classes. The will teach future students the fundamentals of being a mermaid and how to succeed as one. After these classes are taken, there are a variety of classes offered after taking the fundamentals that can make you into any kind of mermaid you might want to be.
+    section 
+        h2 Things To Do
+        ul
+            li Swim Teacher 
+            li Mermaid Specialist 
+            li Mermaid Royalty 
+            li Life Guard 
+            li Professional Swimmer 
+            li Tail Designer 
+
+    h1 Comment Section
+    form(method="post", action="/addStudent1")
+        label(for="comment") Add Comment: 
+        input.todoInput(type="text" name="comment" required)
+        input.button(type="submit", value="Add")
+    hr  
+    h2 List of comments
+    ul
+    - for (let i = 0; i < student1.length; i++)
+        li= student1[i].id + " " + student1[i].comment
+            form(action="/deleteStudent1", method="post")
+                input(type="hidden", name="id" value=student1[i].id)
+                input.button(type="submit", value="Delete")
+            form(action='/editStudent1' method='post')
+                input(type='text', name='comment', value=student1[i].comment)
+                input(type='hidden' name='id' value=student1[i].id)
+                input.button(type='submit' value='Submit')
+            hr

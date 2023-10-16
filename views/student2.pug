@@ -1,0 +1,58 @@
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Professional Sleeper(Masters)
+  link(rel='stylesheet' href='css/student2.css')
+  script(src='js/main.js')
+body
+  h1 How to Become a Professional Sleeper
+    section
+    h2 Location:
+    p
+    | This University is located in the heart of New York City, where it is the hardest to sleep. That is why this major is so popular at this University.
+section
+  h2 About the Major:
+  section#section1
+    h3 How to Fall Asleep Instantly
+    p
+      | This is the main part of the major material due to the intensity of the lectures. This is where students need to spend most of their time and effort to truly master the form of sleeping quickly.
+      | This is an extremely powerful and important skill, when it comes to becoming a professional sleeper.
+    img(src='https://i.ytimg.com/vi/tLK-wB3RPn0/mqdefault.jpg' alt='Professional Sleeper' height='220')
+  section#section2
+    h3 How to Sleep Anywhere
+    p
+      | One of the main reasons why this major is so popular at this University, is because it is located in the city that never sleeps. Yet our goal is to make our student sleep anywhere and everywhere
+      | they want. There will be study abroad opportunities for those seeking a challenge.
+    img(src='https://blog.assets.thediscoverer.com/2019/12/sleep-anywhere.jpg' alt='Sleep Anywhere' height='220')
+  section#section3
+    h3 The 10 3 2 1 0 Sleep Rule
+    p
+      | This fundamental rule will help our students control the amount of sleep they want to have. By following this rule, our students will be able to fall asleep easily and can therefore become a
+      | professional sleeper.
+section
+  h2 Things to do with this Major:
+  ul
+    li Seize your Day
+    li Have more time to sleep
+    li Get more sleeping jobs.
+    li Able to share your knowledge to your sleepless friends and family.
+hr
+.comment
+  h1 Comment Section
+  .addNew
+  form(action='/addStudent2', method="post")
+      label(for='comment') Add new Comment: 
+      input#commentBox(type='text' name='comment' required)
+      input(type='submit' value='Add')
+  h2 Comments:
+  .comments
+    ul
+    - for (let i = 0; i < student2.length; i++)
+        li= student2[i].id + " " + student2[i].comment 
+            form(action="/deleteStudent2", method="post")
+                input(type="hidden", name="id" value=student2[i].id)
+                input(type="submit", value="Delete")
+            form(action='/editStudent2' method='post')
+                input#editBox(type='text', name='comment', value=student2[i].comment)
+                input(type='hidden' name='id' value=student2[i].id)
+                input(type='submit' value='Edit')

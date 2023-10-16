@@ -1,0 +1,36 @@
+/*Jaden Dawdy*/
+body{
+    background-color: rgb(135, 218, 243);
+    width: 75%;
+}
+
+h2 {
+    font-weight: bold;
+    text-decoration: underline;
+    padding: 10px;
+}
+
+h3 {
+    padding: 10px;
+}
+hr {
+    border-color: rgb(6, 55, 70);
+}
+
+section {
+    border: 1px solid rgb(6, 55, 70);
+}
+
+p{
+    text-indent: 25px;
+    padding: 10px;
+}
+
+img {
+    padding: 10px;
+}
+
+input.todoInput {
+    background-color: rgb(218, 250, 250);
+}
+

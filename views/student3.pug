@@ -1,0 +1,63 @@
+doctype html
+link(rel='stylesheet' href='css/student3.css')
+
+head
+    title Mayonnaise expert (PHD)
+body
+    h1 Mayonnaise Expert
+    section#section1
+        h2 Location 
+        hr#hr1
+        p 
+            | An aspiring Mayonnaise Expert should plan to begin their studies at the Overlook Hotel.
+            br
+            | Why such a specific place one might ask?
+            br
+            | It's a fancy kitchen with everything one should ever need, nestled in a beautiful location, but you'll have to SEE it to believe it.
+    hr#hr2
+    section#section2
+        h2 About:
+        section 
+            h3 This major will equip you with the information and experience needed to always be the center of attention at all of your family gatherings with your killer mayoesque dishes.
+            img(src='https://cdn.pixabay.com/photo/2015/09/09/17/05/grill-931878_1280.jpg' height='300')
+        section 
+            h3 Mayonnaise experts on average make a pretty hefty salary. Their skills are valuable when you think about a world without any Mayonnaise.
+            img(src='https://upload.wikimedia.org/wikipedia/commons/1/14/Dollar_Sign.svg' height='100px')
+        section
+            h3 Our program prides itself on being one of the lowest cost programs around! All you need to bring is your brain, taste buds, and a notebook!
+        hr#hr3
+    section#section3
+        h2 Things to Do:
+        ul
+            li Become a culinary god.
+            li Transition into other food groups (incorporate new foods + mayo)
+            li Provide a stable future for yourself and your family.
+            li Long live Mayonnaise!
+        hr
+    section#addComment
+        form#addCommentForm(action='/student3AddComment', method='post')
+            input(type='text', name='comment', required)
+            button(type='submit') Add Comment
+    
+        table
+            tr
+                th Comments
+                th Actions
+            
+            each comment in comments
+                tr
+                    td= comment.comment
+                    td
+                        br
+                        form(action='/student3EditComment', method='post')
+                            input(type='hidden', name='id', value=comment.id)
+                            input(type='text', name='comment', value=comment.comment, required)
+                            button#editButton(type='submit') Edit
+                        br
+                        form(action='/student3DeleteComment', method='post')
+                            input(type='hidden', name='id', value=comment.id)
+                            input#deleteButton(type='submit', value='Delete')
+                        br
+
+    
+        
